@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machithole Tharavad</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(45deg, #ff4500, #ffcc00, #990000);
+      background-size: 300% 300%;
+      animation: fireBackground 5s infinite alternate;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    @keyframes fireBackground {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #ffcc00;
+      margin: 0;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #ffcc00;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #ffcc00;
+      color: #000;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ffdd33;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffcc00;
+    }
+
+    /* Gallery Styling */
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      width: 60%;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img {
+      width: calc(30% - 1rem);
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+
+    .gallery img:not(:hover) {
+      transform: scale(0.8);
+      opacity: 0.6;
+    }
+
+    .details {
+      flex: 1;
+      margin-left: 2rem;
+      max-width: 30%;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s ease;
+    }
+
+    .details.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .details h3 {
+      color: #ffcc00;
+    }
+
+    .details p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      color: #fff;
+      padding: 1rem 0;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Machithole Tharavad</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h2>Welcome to Machithole Tharavad</h2>
+      <p>Experience the sacred traditions of Theyyam, a divine art form rooted in our heritage.</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h3>About Us</h3>
+    <p>Machithole Tharavad is a revered place where the divine meets tradition. Nestled in the heart of Kannur, our heritage holds the essence of Theyyam performances, offering spiritual blessings and cultural insight.</p>
+  </section>
+
+  <section id="gallery">
+    <h3>Gallery</h3>
+    <div class="gallery-container">
+      <div class="gallery" id="gallery">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Kandanar_Kelan_Theyyam_Photo_by_Ijas_Muhammed_.jpg/1280px-Kandanar_Kelan_Theyyam_Photo_by_Ijas_Muhammed_.jpg" 
+          alt="Kandanar Kelan Theyyam" data-title="Kandanar Kelan Theyyam" data-description="A vibrant performance of Kandanar Kelan, depicting the fierce guardian spirit." 
+          onmouseover="showDetails(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvZvxpJMCbGwlB7eoT1zqohFWNpK6nEKcsow&s" 
+          alt="Mesmerizing Theyyam" data-title="Wayanattu Kulavan Theyyam" data-description="An enchanting Theyyam ritual performed with divine energy." 
+          onmouseover="showDetails(this)">
+        <img src="https://hiddenmantra.com/wp-content/uploads/2023/01/vishnumoorthi-theyyam-face.jpeg" 
+          alt="Vishnumoorthi Theyyam" data-title="Vishnumoorthi Theyyam" data-description="The face of Vishnumoorthi, symbolizing devotion and grace." 
+          onmouseover="showDetails(this)">
+      </div>
+      <div class="details" id="details">
+        <h3 id="details-title"></h3>
+        <p id="details-description"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Us</h3>
+    <p>Email: contact@machitholetharavad.com</p>
+    <p>Phone: +91 9207010930</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Machithole Tharavad. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function showDetails(image) {
+      const details = document.getElementById('details');
+      const title = document.getElementById('details-title');
+      const description = document.getElementById('details-description');
+
+      title.textContent = image.getAttribute('data-title');
+      description.textContent = image.getAttribute('data-description');
+
+      details.classList.add('active');
+    }
+  </script>
+</body>
+</html>
